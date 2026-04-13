@@ -29,20 +29,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Morgan — Full-Stack Developer & Designer",
+  title: "Tej — Full-Stack Developer & Designer",
   description:
-    "Personal portfolio of Alex Morgan, a Senior Full-Stack Developer and UI/UX Designer based in San Francisco. Building beautiful, scalable web applications.",
+    "Personal portfolio of Tejendra, a Senior Full-Stack Developer and UI/UX Designer based in San Francisco. Building beautiful, scalable web applications.",
   keywords: ["Full-Stack Developer", "React", "Next.js", "TypeScript", "UI/UX Designer", "Portfolio"],
-  authors: [{ name: "Alex Morgan" }],
+  authors: [{ name: "Tejendra" }],
+   icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
-    title: "Alex Morgan — Full-Stack Developer & Designer",
+    title: "Tejendra — Full-Stack Developer & Designer",
     description: "Building digital experiences that inspire, scale, and endure.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Morgan — Full-Stack Developer",
+    title: "Tejendra — Full-Stack Developer",
     description: "Building digital experiences that inspire, scale, and endure.",
   },
 };
