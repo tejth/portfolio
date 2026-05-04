@@ -2,7 +2,7 @@
 // src/components/sections/Contact.tsx
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Instagram, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -22,7 +22,7 @@ export default function Contact() {
   const socials = [
     { icon: Github, href: personalInfo.github, label: "GitHub" },
     { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
-    { icon: Instagram, href: personalInfo.twitter, label: "Twitter" },
+    { icon: Twitter, href: personalInfo.twitter, label: "Twitter" },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

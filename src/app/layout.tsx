@@ -29,10 +29,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tej — Full-Stack Developer & Designer",
+  title: "Tej — Aspiring AI Engineer",
   description:
-    "Personal portfolio of Tejendra, a Senior Full-Stack Developer and UI/UX Designer based in San Francisco. Building beautiful, scalable web applications.",
-  keywords: ["Full-Stack Developer", "React", "Next.js", "TypeScript", "UI/UX Designer", "Portfolio"],
+    "Personal portfolio of Tejendra, a Senior Full-Stack Developer and UI/UX Designer based in India. Building beautiful, scalable web applications.",
+  keywords: ["Aspiring A.I Engineer","Full-Stack Developer", "React", "Next.js", "TypeScript", "UI/UX Designer"],
   authors: [{ name: "Tejendra" }],
    icons: {
     icon: "/favicon.ico",

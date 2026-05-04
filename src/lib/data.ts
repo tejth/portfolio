@@ -10,7 +10,7 @@ export const personalInfo = {
   location: "Jaipur, Rajasthan, India",
   github: "https://github.com/tejth",
   linkedin: "https://linkedin.com/in/tejth",
-  twitter: "https://www.instagram.com/_tej_tushar_/",
+  twitter: "https://x.com/CodeLustX",
   avatar: "https://avatars.githubusercontent.com/u/1?v=4",
   resumeUrl: "https://drive.google.com/file/d/17qc46CNj9ESt0DSxO3mA518DCpW6MbUO/view?usp=drive_link",
   bio: `I'm a passionate Software Developer and ML Engineer pursuing B.Tech in Computer Science 
@@ -47,6 +47,17 @@ export const skills = {
 export const projects = [
   {
     id: 1,
+    title: "YT-InSight Chrome PlugIn",
+    description:
+      "YT Insight is a Chrome Extension + Flask backend that lets you have a full AI conversation about any YouTube video. Paste a video URL, hit Load, and ask anything — summaries, key points, specific concepts explained, timestamps — all answered from the actual video transcript using a RAG (Retrieval-Augmented Generation) pipeline.",
+    image: "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1086&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tags: ["Python" , "LangChain" , "GenAi" , "JavaScript"],
+    github: "https://github.com/tejth/YT-INSIGHT",
+    featured: true,
+    color: "from-blue-600 to-cyan-500",
+  },
+  {
+    id: 2,
     title: "Support AI — SaaS Chatbot Platform",
     description:
       "A SaaS-based AI customer support platform enabling businesses to generate and embed customized AI chatbots into their websites via a simple JavaScript script. Reduced manual support workload by an estimated 40%.",
@@ -58,7 +69,7 @@ export const projects = [
     color: "from-blue-600 to-cyan-500",
   },
   {
-    id: 2,
+    id: 3,
     title: "Portfolio Website",
     description:
       "Personal portfolio website built with React.js and Firebase, featuring React-Reveal animations, smooth scrolling, and a vertical timeline. Improved project visibility by 40% and boosted user engagement by 35%.",
@@ -70,7 +81,7 @@ export const projects = [
     color: "from-indigo-600 to-blue-500",
   },
   {
-    id: 3,
+    id: 4,
     title: "SymptoCare — Medical Recommendation System",
     description:
       "ML-powered medical recommendation system that predicts medicines and precautions based on user-input symptoms using Naive Bayes and Decision Trees. Improved prediction accuracy by 25%.",
@@ -82,7 +93,7 @@ export const projects = [
     color: "from-sky-600 to-blue-700",
   },
   {
-    id: 4,
+    id: 5,
     title: "SmartData OS",
     description:
       "A full-stack data analytics web application built with pure Python , Upload any CSV or JSON dataset — get statistics, charts, AI insights, health scores, correlation heatmaps, preprocessing tools, filtering, merging and downloadable reports.",

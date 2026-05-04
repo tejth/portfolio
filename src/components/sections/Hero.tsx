@@ -2,7 +2,7 @@
 // src/components/sections/Hero.tsx
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { Download, ArrowRight, Github, Linkedin, Instagram, ChevronDown } from "lucide-react";
+import { Download, ArrowRight, Github, Linkedin, Twitter, ChevronDown } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import { scrollToSection } from "@/lib/utils";
 
@@ -10,7 +10,7 @@ export default function Hero() {
   const socials = [
   { icon: Github, href: personalInfo.github, label: "GitHub" },
   { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
-  { icon: Instagram, href: personalInfo.twitter, label: "Instagram" },
+  { icon: Twitter, href: personalInfo.twitter, label: "Instagram" },
 ];
 
   return (
