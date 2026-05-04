@@ -36,6 +36,8 @@ export const skills = {
     { name: "Streamlit", level: 80, icon: "⚡" },
   ],
   tools: [
+    { name: "LangChain", level: 82, icon: "📈" },
+    { name: "LangGraph", level: 82, icon: "📈" },
     { name: "Power BI", level: 82, icon: "📈" },
     { name: "Git / GitHub", level: 88, icon: "🔀" },
     { name: "Jupyter Notebook", level: 85, icon: "📓" },
