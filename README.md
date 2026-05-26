@@ -1,4 +1,4 @@
-# 🚀 Alex Morgan — Personal Portfolio
+# 🚀 Tejendra Pal Singh — Personal Portfolio
 
 A modern, premium portfolio website built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Features AI-powered chatbot, smooth animations, glassmorphism UI, and full responsiveness.
 
