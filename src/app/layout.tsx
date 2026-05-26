@@ -65,8 +65,8 @@ export default function RootLayout({
           <CustomCursor />
           {children}
         </ThemeProvider>
-        <script src="https://supportai-lac.vercel.app/chatBot.js"
-    data-owner-id="usr_113570581026178064"></script>
+       <script src="https://supportai-lac.vercel.app/chatBot.js"
+    data-owner-id="usr_113570581026178064">
       </body>
     </html>
   );
