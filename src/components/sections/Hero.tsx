@@ -2,16 +2,24 @@
 // src/components/sections/Hero.tsx
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { Download, ArrowRight, Github, Linkedin, Twitter, ChevronDown } from "lucide-react";
+import {
+  Download,
+  ArrowRight,
+  Github,
+  Linkedin,
+  Twitter,
+  ChevronDown,
+  BookOpen,
+} from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import { scrollToSection } from "@/lib/utils";
 
 export default function Hero() {
   const socials = [
-  { icon: Github, href: personalInfo.github, label: "GitHub" },
-  { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
-  { icon: Twitter, href: personalInfo.twitter, label: "Instagram" },
-];
+    { icon: Github, href: personalInfo.github, label: "GitHub" },
+    { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
+    { icon: Twitter, href: personalInfo.twitter, label: "Instagram" },
+  ];
 
   return (
     <section
@@ -20,7 +28,10 @@ export default function Hero() {
     >
       {/* Glowing orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-800/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none" style={{ animationDelay: "2s" }} />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-800/10 rounded-full blur-3xl animate-pulse-slow pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      />
 
       <div className="container-max relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -33,7 +44,9 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass rounded-full border border-blue-500/20"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-sm text-slate-300 font-mono">Available for new opportunities</span>
+            <span className="text-sm text-slate-300 font-mono">
+              Available for new opportunities
+            </span>
           </motion.div>
 
           {/* Name */}
@@ -87,12 +100,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-5"
           >
             <motion.button
               onClick={() => scrollToSection("contact")}
               className="flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all glow-blue"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59,130,246,0.5)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 30px rgba(59,130,246,0.5)",
+              }}
               whileTap={{ scale: 0.97 }}
             >
               Hire Me <ArrowRight className="w-4 h-4" />
@@ -106,6 +122,29 @@ export default function Hero() {
               whileTap={{ scale: 0.97 }}
             >
               <Download className="w-4 h-4" /> Resume
+            </motion.a>
+          </motion.div>
+
+          {/* Documentation Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.75 }}
+            className="flex justify-center mb-12"
+          >
+            <motion.a
+              href="https://documentation-site-ten.vercel.app/python/data-types"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-8 py-4 glass border border-blue-500/30 hover:border-blue-400/60 text-white font-semibold rounded-xl transition-all hover:bg-blue-500/10"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 25px rgba(59,130,246,0.35)",
+              }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <BookOpen className="w-4 h-4" />
+              Explore My Docs
             </motion.a>
           </motion.div>
 
@@ -147,9 +186,16 @@ export default function Hero() {
               { value: "10+", label: "Projects" },
               { value: "9.4", label: "CGPA" },
             ].map((stat) => (
-              <div key={stat.label} className="glass-card rounded-2xl p-4 text-center">
-                <div className="text-2xl font-display font-bold text-gradient">{stat.value}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
+              <div
+                key={stat.label}
+                className="glass-card rounded-2xl p-4 text-center"
+              >
+                <div className="text-2xl font-display font-bold text-gradient">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-slate-500 mt-0.5">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </motion.div>
