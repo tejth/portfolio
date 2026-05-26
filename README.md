@@ -178,4 +178,4 @@ MIT — feel free to use and adapt for your own portfolio.
 
 ---
 
-**Made with ❤️ by Alex Morgan**
+**Made with ❤️ by Tejendra Pal Singh**
