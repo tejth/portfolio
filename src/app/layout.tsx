@@ -57,11 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
-      <Script
-  src="https://supportai-lac.vercel.app/chatBot.js"
-  data-owner-id="usr_120767135516460315"
-  strategy="afterInteractive"
-/>
+     <script src="https://supportai-lac.vercel.app/chatBot.js"
+    data-owner-id="undefined">
+</script>
       <body
         className={`${dmSerif.variable} ${dmSans.variable} ${jetbrainsMono.variable} font-body antialiased bg-navy-900 text-white`}
       >
