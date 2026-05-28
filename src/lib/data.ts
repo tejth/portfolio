@@ -111,9 +111,23 @@ export const projects = [
 export const experience = [
   {
     id: 1,
+    company: "Tata Consultancy Services",
+    role: "System Engineer — Grade c1",
+    duration: "Upcoming",
+    location: "Full-time, India",
+    description:
+      "Working as a System Engineer Grade C1 at Tata Consultancy Services, contributing to software development, application support, system maintenance, and client-focused technology solutions across diverse projects and technologies.",
+    achievements: [
+      
+    ],
+    tech: ["Python", "Java"],
+    color: "indigo",
+  },
+  {
+    id: 2,
     company: "Global AI Technologies",
     role: "Associate Software Engineer — Intern",
-    duration: "Jan 2026 — Present",
+    duration: "Jan 2026 — June 2026",
     location: "Remote",
     description:
       "Building machine learning models for predictive analytics and classification. Performing end-to-end data workflows using Python and SQL, and delivering AI-driven business solutions.",
@@ -127,7 +141,7 @@ export const experience = [
     color: "blue",
   },
   {
-    id: 2,
+    id: 3,
     company: "Edunet Foundation",
     role: "Machine Learning Engineer",
     duration: "Jul 2025 — Aug 2025",
@@ -176,10 +190,13 @@ export const education = [
 ];
 
 export const certifications = [
+  { name: "Claude 101", issuer: "Anthropic", year: "2026", icon: "🤖" },
+  { name: "Generative AI", issuer: "Linked IN", year: "2025", icon: "👨‍💻" },
   { name: "JavaScript Specialization Program", issuer: "Infosys", year: "2024", icon: "🟨" },
   { name: "Python for Data Science", issuer: "IBM SkillBuild", year: "2024", icon: "🐍" },
   { name: "Innovate Hackathon Participant", issuer: "Hackathon", year: "2024", icon: "🏆" },
-  { name: "5-Star C++ Rating", issuer: "HackerRank", year: "2023", icon: "⭐" },
+  { name: "5-Star C++ Rating", issuer: "HackerRank", year: "2023", icon: "⭐" }
+   
 ];
 
 // AI chatbot knowledge base
