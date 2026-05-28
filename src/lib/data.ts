@@ -106,13 +106,26 @@ export const projects = [
     featured: false,
     color: "from-blue-500 to-orange-500",
   },
+
+   {
+    id: 6,
+    title: "Data Visulization Dashboard - Power BI",
+    description:
+      " Power BI dashboards  that visualizes key performance metrics for a fictional e-commerce company. The dashboard includes interactive charts, filters, and AI-generated insights to help stakeholders make data-driven decisions.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    tags: ["Microsoft Power BI", "Data Visualization", "DAX", "Excel", "Data Analysis"],
+    github: "https://github.com/tejth/Data-visualization-Tata-Tasks",
+    live: "#",
+    featured: false,
+    color: "from-blue-500 to-orange-500",
+  },
 ];
 
 export const experience = [
   {
     id: 1,
     company: "Tata Consultancy Services",
-    role: "System Engineer — Grade c1",
+    role: "System Engineer — Grade C1",
     duration: "Upcoming",
     location: "Full-time, India",
     description:
@@ -192,6 +205,7 @@ export const education = [
 export const certifications = [
   { name: "Claude 101", issuer: "Anthropic", year: "2026", icon: "🤖" },
   { name: "Generative AI", issuer: "Linked IN", year: "2025", icon: "👨‍💻" },
+   { name: "Forage Data Visualization", issuer: "Tata Group", year: "2024", icon: "📊" },
   { name: "JavaScript Specialization Program", issuer: "Infosys", year: "2024", icon: "🟨" },
   { name: "Python for Data Science", issuer: "IBM SkillBuild", year: "2024", icon: "🐍" },
   { name: "Innovate Hackathon Participant", issuer: "Hackathon", year: "2024", icon: "🏆" },
