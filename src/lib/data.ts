@@ -9,7 +9,7 @@ export const personalInfo = {
   phone: "+91 6399284807",
   location: "Jaipur, Rajasthan, India",
   github: "https://github.com/tejth",
-  linkedin: "https://linkedin.com/in/tejth",
+  linkedin: "https://www.linkedin.com/in/tejendra-pal-singh-6b595a235/",
   twitter: "https://x.com/CodeLustX",
   avatar: "https://avatars.githubusercontent.com/u/1?v=4",
   resumeUrl: "https://drive.google.com/file/d/17qc46CNj9ESt0DSxO3mA518DCpW6MbUO/view?usp=drive_link",
