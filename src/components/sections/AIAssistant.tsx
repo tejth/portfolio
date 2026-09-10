@@ -1,8 +1,17 @@
 "use client";
+
 // src/components/sections/AIAssistant.tsx
+
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Bot, User, Sparkles, RotateCcw, Loader2 } from "lucide-react";
+import {
+  Send,
+  Bot,
+  User,
+  Sparkles,
+  RotateCcw,
+  Loader2,
+} from "lucide-react";
 import { Message } from "@/types";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -26,12 +35,20 @@ export default function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Reference to the chat messages container
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
+
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll to latest message
+  // Auto-scroll ONLY inside the chat box
+  // This prevents the whole webpage from jumping to AI Assistant
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    const container = messagesContainerRef.current;
+
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   }, [messages]);
 
   const sendMessage = async (text: string) => {
@@ -51,11 +68,16 @@ export default function AIAssistant() {
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           messages: [...messages, userMessage]
             .filter((m) => m.id !== "welcome")
-            .map((m) => ({ role: m.role, content: m.content })),
+            .map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
         }),
       });
 
@@ -64,7 +86,9 @@ export default function AIAssistant() {
       const assistantMessage: Message = {
         id: crypto.randomUUID(),
         role: "assistant",
-        content: data.message || "I couldn't process that request. Please try again.",
+        content:
+          data.message ||
+          "I couldn't process that request. Please try again.",
         timestamp: new Date(),
       };
 
@@ -75,12 +99,15 @@ export default function AIAssistant() {
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          content: "Sorry, I'm having a moment. Please try again shortly!",
+          content:
+            "Sorry, I'm having a moment. Please try again shortly!",
           timestamp: new Date(),
         },
       ]);
     } finally {
       setLoading(false);
+
+      // Put cursor back into the input after response
       inputRef.current?.focus();
     }
   };
@@ -123,11 +150,18 @@ export default function AIAssistant() {
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center glow-blue-sm">
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
+
                   <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-navy-900" />
                 </div>
+
                 <div>
-                  <p className="text-sm font-semibold text-white">Tejendra&apos;s AI Assistant</p>
-                  <p className="text-xs text-green-400">Online · Powered by Claude</p>
+                  <p className="text-sm font-semibold text-white">
+                    Tejendra&apos;s AI Assistant
+                  </p>
+
+                  <p className="text-xs text-green-400">
+                    Online · Powered by Claude
+                  </p>
                 </div>
               </div>
 
@@ -138,20 +172,38 @@ export default function AIAssistant() {
                 whileTap={{ scale: 0.95 }}
                 title="Reset conversation"
               >
-                <RotateCcw className="w-3.5 h-3.5" /> Reset
+                <RotateCcw className="w-3.5 h-3.5" />
+                Reset
               </motion.button>
             </div>
 
             {/* Messages */}
-            <div className="h-80 overflow-y-auto p-5 space-y-4 scroll-smooth">
+            <div
+              ref={messagesContainerRef}
+              className="h-80 overflow-y-auto p-5 space-y-4 scroll-smooth"
+            >
               <AnimatePresence initial={false}>
                 {messages.map((message) => (
                   <motion.div
                     key={message.id}
-                    initial={{ opacity: 0, y: 10, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                    className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}
+                    initial={{
+                      opacity: 0,
+                      y: 10,
+                      scale: 0.97,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className={`flex gap-3 ${
+                      message.role === "user"
+                        ? "flex-row-reverse"
+                        : ""
+                    }`}
                   >
                     {/* Avatar */}
                     <div
@@ -184,21 +236,30 @@ export default function AIAssistant() {
                 {/* Typing indicator */}
                 {loading && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{
+                      opacity: 0,
+                      y: 10,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
                     className="flex gap-3"
                   >
                     <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0">
                       <Bot className="w-4 h-4 text-white" />
                     </div>
+
                     <div className="px-4 py-3 bg-blue-950/60 border border-blue-900/40 rounded-2xl rounded-tl-none flex items-center gap-1.5">
                       <Loader2 className="w-4 h-4 text-blue-400 animate-spin" />
-                      <span className="text-xs text-slate-400">Thinking...</span>
+
+                      <span className="text-xs text-slate-400">
+                        Thinking...
+                      </span>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Suggested questions */}
@@ -218,7 +279,10 @@ export default function AIAssistant() {
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSubmit} className="flex gap-3 p-4 border-t border-blue-900/30">
+            <form
+              onSubmit={handleSubmit}
+              className="flex gap-3 p-4 border-t border-blue-900/30"
+            >
               <input
                 ref={inputRef}
                 type="text"
@@ -228,6 +292,7 @@ export default function AIAssistant() {
                 disabled={loading}
                 className="flex-1 bg-blue-950/40 border border-blue-900/40 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/60 focus:bg-blue-950/60 transition-all disabled:opacity-50"
               />
+
               <motion.button
                 type="submit"
                 disabled={!input.trim() || loading}
@@ -246,7 +311,8 @@ export default function AIAssistant() {
 
           {/* Disclaimer */}
           <p className="text-center text-xs text-slate-600 mt-4">
-            AI responses are generated based on Tejendra&apos;s portfolio data. For critical info, contact directly.
+            AI responses are generated based on Tejendra&apos;s portfolio
+            data. For critical info, contact directly.
           </p>
         </div>
       </div>
