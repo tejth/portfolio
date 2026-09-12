@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   ],
 
   icons: {
-    icon: "/favi.png",
+    icon: "/favir.png",
   },
 
   openGraph: {
